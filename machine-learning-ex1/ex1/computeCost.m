@@ -13,8 +13,11 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+hypothesis = X*theta;
+J = 1/(2*m)*sum((hypothesis - y).^2); 
 
-
+# 주어진 X*theta 형태가 음. 확실히 확인하고 좋을거같은데 식 그대로 옮기기 힘듦.
+# 행렬을 그려보니, 수식으로 나타내려면 X*theta 순서가 맞음.
 
 
 % =========================================================================
