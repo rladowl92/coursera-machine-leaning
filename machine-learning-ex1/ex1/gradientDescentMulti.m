@@ -18,7 +18,10 @@ for iter = 1:num_iters
     %
 
 
-
+    tmp_theta=theta;
+    theta(1) = tmp_theta(1) - alpha / m * sum ((X*tmp_theta - y).*X(:, 1));
+    theta(2) = tmp_theta(2) - alpha / m * sum ((X*tmp_theta - y).*X(:, 2));
+    theta(3) = tmp_theta(3) - alpha / m * sum ((X*tmp_theta - y).*X(:, 3));
 
 
 
