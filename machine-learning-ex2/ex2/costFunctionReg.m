@@ -18,7 +18,16 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+hypothesis = sigmoid(X*theta);
+zero_y_cost = log(hypothesis).*-y;
+one_y_cost = log(1-hypothesis).*(1-y);
+lambdaValue = lambda/(2*m)*sum(theta.^2);
 
+J = sum(zero_y_cost - one_y_cost)/m + lambdaValue;
+
+derivation = (X'*(hypothesis-y))/m ;
+lambdaDerivation = lambda/m*theta;
+grad=derivation + lambdaDerivation;
 
 
 
