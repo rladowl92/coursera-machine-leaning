@@ -20,12 +20,14 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+hypothesis = sigmoid(X*theta);
+zero_y_cost = log(hypothesis).*-y;
+one_y_cost = log(1-hypothesis).*(1-y);
+J = sum(zero_y_cost - one_y_cost)/m;
 
-
-
-
-
-
+derivation = (X'*(hypothesis-y))/m;
+grad=derivation;
+%gradient 는 경사만을 의미하는 것에 주의. theta-derivation 은 gradient decent. 가 됨.
 
 % =============================================================
 
