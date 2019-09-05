@@ -15,8 +15,14 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
-
-
+m = size(X);
+for i = 1 : m(1)
+  X_poly_record = zeros(1, p);
+  for j = 1 : p
+    X_poly_record(j) = X(i)^j;
+  endfor
+  X_poly(i, :) = X_poly_record;
+endfor
 
 
 

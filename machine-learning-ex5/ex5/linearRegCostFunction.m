@@ -20,9 +20,15 @@ grad = zeros(size(theta));
 %
 
 
+hypothesis = X * theta;
+theta(1,:) = 0;
+lambdaValue = lambda/(2*m)*(theta' * theta);
+J = 1/(2*m) * sum((hypothesis - y).^2) + lambdaValue;
 
 
-
+derivation = 1/m * (X'*(hypothesis - y));
+lambdaDerivation = (lambda/m)*theta;
+grad = derivation + lambdaDerivation; 
 
 
 
